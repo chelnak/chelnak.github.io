@@ -1,0 +1,25 @@
+.grey {
+    color: $dark
+}
+
+.svg-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    fill: currentColor;
+    vertical-align: text-bottom;
+}
+
+.social-media-list {
+    margin: 0 auto;
+    li {
+        float: left;
+        margin: 0 5px;
+        &:first-of-type { margin-left: 0 }
+        &:last-of-type { margin-right: 0 }
+        a {
+            display: block;
+        }
+        &:hover .svg-icon { fill: currentColor; }
+    }
+}
