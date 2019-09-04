@@ -14,67 +14,98 @@ vRO plugin development is something I've wanted to get in to for ages. Mainly be
 
 Over the next few posts I'm hoping to share what I've learnt so far. Hopefully it will give someone a head start. It would also be cool to hear from anyone who has done more miles with this than me.. Have I misunderstood a concept? Or missed something important out? Let me know.
 
- * **Getting started with vRO plugin development - Part 1 &lt;- You are here!**
- * <a href="http://www.helloitscraig.co.uk/2016/04/getting-started-vro-plugin-development-part-2.html" target="_blank">Getting started with vRO plugin development - Part 2</a>
+* **Getting started with vRO plugin development - Part 1 - You are here!**
+* [Getting started with vRO plugin development - Part 2](http://www.helloitscraig.co.uk/2016/04/getting-started-vro-plugin-development-part-2.html)
 
 <!--more-->
-<h2>Versions</h2>
+
+## Versions
+
 These posts have been based of the following versions:
 
- * vRealize Orchestrator 6.0.3
- * <a href="https://archive.apache.org/dist/maven/maven-3/3.0.5/binaries/" target="_blank">Maven 3.0.5</a> (Click <a href="https://maven.apache.org/guides/getting-started/windows-prerequisites.html" target="_blank">here</a> for windows configuration)
- * <a href="http://dist.springsource.com/release/STS/3.7.3.RELEASE/dist/e4.5/spring-tool-suite-3.7.3.RELEASE-e4.5.2-win32-x86_64.zip">Spring Tool Suite 3.7.3</a> (based on eclipse 4.5.2)
- * Java SE development kit 8 update 65 (64bit)
+* vRealize Orchestrator 6.0.3
+* [Maven 3.0.5](https://archive.apache.org/dist/maven/maven-3/3.0.5/binaries/) (Click [here](https://maven.apache.org/guides/getting-started/windows-prerequisites.html) for windows configuration)
+* [Spring Tool Suite 3.7.3](http://dist.springsource.com/release/STS/3.7.3.RELEASE/dist/e4.5/spring-tool-suite-3.7.3.RELEASE-e4.5.2-win32-x86_64.zip) (based on eclipse 4.5.2)
+* Java SE development kit 8 update 65 (64bit)
 
-<h2>Getting started</h2>
+## Getting started
+
 Before you begin, test that maven is working as expected by opening up a command prompt and running:
-```mvn --version```
+
+```Bash
+mvn --version
+```
+
 You should see something that looks similar to this:
 
-<img class="alignnone wp-image-684 size-full" src="http://www.helloitscraig.co.uk/wp-content/uploads/2016/04/mavenok.png" alt="vRO Plugin development" width="708" height="84" />
+![mavenok](/assets/images/mavenok.png)
 
 So that we can keep all of our development contained, create a new directory and cd to it. In this post I'm going to be using C:\vROPluginDevelopment.
-```mkdir C:\vROPluginDevelopment && cd C:\vROPluginDevelopment```
+
+```Bash
+mkdir C:\vROPluginDevelopment && cd C:\vROPluginDevelopment
+```
+
 Once you have confirmed that Maven is configured and your development directory has been created, head over to the following URL on your vRO appliance:
-```https://[vro-appliance]:8281/vco/develop.jsp```
+
+```Bash
+https://[vro-appliance]:8281/vco/develop.jsp
+```
+
 You'll see some maven commands that have been customised with your vRO appliance fqdn. Go back to your command prompt and make sure that you are still in the correct directory and run the first command:
-```mvn archetype:generate -DarchetypeCatalog=https://[vro-appliance]:8281/vco-repo/archetype-catalog.xml -DrepoUrl=https://[vro-appliance]:8281/vco-repo -Dmaven.repo.remote=https://[vro-appliance]:8281/vco-repo -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true```
+
+```Bash
+mvn archetype:generate -DarchetypeCatalog=https://[vro-appliance]:8281/vco-repo/archetype-catalog.xml -DrepoUrl=https://[vro-appliance]:8281/vco-repo -Dmaven.repo.remote=https://[vro-appliance]:8281/vco-repo -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true
+```
+
 Once maven has done it's thing, you'll be prompted to choose an archetype:
 
-<a href="http://www.helloitscraig.co.uk/wp-content/uploads/2016/04/choose-an-archetype.png"><img class="alignnone wp-image-685 size-full" src="http://www.helloitscraig.co.uk/wp-content/uploads/2016/04/choose-an-archetype.png" alt="vRO Plugin development" width="1267" height="120" /></a>
+![archetype](/assets/images/choose-an-archetype.png)
 
 I'm going to be using **com.vmware.o11n:o11n-archetype-spring** which is option **5**. One thing that I've noticed after a bit of trial and error is that each archetype has it's own quirks. All of the ones that I have tried so far have needed manual changes to the master pom.xml.. as you will see in a second.
 
 When you choose an archetype you will be prompted with a number of questions. These will help maven configure the project properly. Here is what I will be using in this example:
 
- * **groupId:** com.company
- * **artifactId:** helloworld
- * **package:** com.company.helloworld
- * **pluginAlias:** HelloWorld
- * **pluginName:** HelloWorld
- * **rootElement:** helloworld
- * **vcoVersion:** 6.0.3
+* **groupId:** com.company
+* **artifactId:** helloworld
+* **package:** com.company.helloworld
+* **pluginAlias:** HelloWorld
+* **pluginName:** HelloWorld
+* **rootElement:** helloworld
+* **vcoVersion:** 6.0.3
 
 If you are happy with what you have entered, confirm the configuration:
 
-<img class="alignnone wp-image-688 size-full" src="http://www.helloitscraig.co.uk/wp-content/uploads/2016/04/confirm.png" alt="vRO Plugin development" width="291" height="190" />
+![confirm](/assets/images/confirm.png)
 
 Maven will now attempt to build the project, pulling any dependencies it needs from the repository hosted on the vRO appliance. If successful you should end up with a directory matching the name of the plugin which contains three folders and a pom.xml:
 
-<img class="alignnone wp-image-689 size-full" src="http://www.helloitscraig.co.uk/wp-content/uploads/2016/04/initial-build.png" alt="vRO Plugin development" width="583" height="119" />
+![initial-build](/assets/images/initial-build.png)
 
 Great, so the initial project is built but before you can continue there is a small bit of work to do in the master pom.xml file.
 
-Open it up in a decent <a href="https://atom.io/" target="_blank">text editor</a> and search for **&lt;properties&gt;**. Add the following property to the list (replacing [vro-appliance] with the fqdn of your appliance):
-```&lt;repoUrl&gt;https://[vro-appliance]:8281/vco-repo&lt;/repoUrl&gt;```
+Open it up in a decent [text editor](https://atom.io/) and search for `<properties>`. Add the following property to the list (replacing [vro-appliance] with the fqdn of your appliance):
+
+```XML
+<repoUrl>;https://[vro-appliance]:8281/vco-repo</repoUrl>
+```
+
 It should end up looking something like this:
 
-<img class="alignnone wp-image-691 size-full" src="http://www.helloitscraig.co.uk/wp-content/uploads/2016/04/pom-edited.png" alt="vRO Plugin development" width="537" height="107" />
+![pom-edited](/assets/images/pom-edited.png)
 
 Without this change, the project will not build as maven will have no idea were the repository is. I'm not sure if this is by design or a bug? My guess is bug as some of the other archetypes have similar issues.
 
 Now everything is in place, lets run a test build to make sure everything is correct. Make sure you are in the project directory, which in this example is C:\vROPluginDevelopment\helloworld, and run the following command:
-```mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true```
+
+```Bash
+mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true
+```
+
 If there were no errors, great! Maven will have compiled the project and created a vmoapp file that is ready to upload to vRO.
-```C:\vROPluginDevelopment\helloworld\o11nplugin-helloworld\target\o11nplugin-helloworld-1.0.0-SNAPSHOT.vmoapp```
+
+```Bash
+C:\vROPluginDevelopment\helloworld\o11nplugin-helloworld\target\o11nplugin-helloworld-1.0.0-SNAPSHOT.vmoapp
+```
+
 In part two, I'll be showing you how to make some basic modifications to the out of the box code. Stay tuned. :-)

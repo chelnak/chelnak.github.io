@@ -9,7 +9,7 @@ categories:
 tags:
   - PowerShell
 ---
-If you have a repository on <a href="https://github.com" target="_blank">GitHub</a> and want to ensure that you always have a copy of the latest release here is a quick way to grab it (in zip format) with PowerShell.
+If you have a repository on [GitHub](https://github.com) and want to ensure that you always have a copy of the latest release here is a quick way to grab it (in zip format) with PowerShell.
 
 <script src="https://gist.github.com/chelnak/8614ffb320c20c1219f9.js"></script>
 

@@ -38,4 +38,4 @@ Now enter the Application ID into the global settings section of the Visio Graph
 * Click on Visio Graphics Service and select Manage from the ribbon.
 * Navigate into Global Settings and enter the previously set Target Application ID into the relivant field.
 
-![](/assets/images/Secure-Store3.png)
+![Secure-Store](/assets/images/Secure-Store3.png)

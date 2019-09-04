@@ -10,20 +10,20 @@ tags:
   - vCAC
   - vRA
 ---
-<h2>What is a resource type?</h2>
+## What is a resource type?
 This is straight from the <a href="http://pubs.vmware.com/vra-62/index.jsp#docs/resource_ResourceType.html" target="_blank">catalog-service API docs</a>:
 <blockquote>A type assigned to resources. The types are defined by the provider types. It allows similar resources to be grouped together. For example, all vCloud Director VMs would have the same resource type, regardless of which VCD provider they came from. ResourceTypes may be hierarchical in which case the parentType can be set.</blockquote>
 And in simple terms... It's how items are grouped in the left hand navigation when you select the items tab in the web console.
 
 <!--more-->
-<h2>Why rename them?</h2>
+## Why rename them?
 When a customer deploys a Custom Resource the OOTB terminology used by vRA might not match the terminology used by the organization. I guess this is no biggy, but when you are trying to encourage end-user adoption it's important to make their experience as trouble-free as possible.. and if that means one less "what does this mean" question then you score a point!
-<h2>How do you do it?</h2>
+## How do you do it?
 <span style="color: #ff0000;">****Disclaimer: Don't do this against a production system.. The steps below haven't been fully tested and are just "proof of concept"!****</span>
 
 It's not as hard as I thought it would be. Ten minutes looking through the API docs led me to catalog-service endpoint and I was able to get the job done by using a combination of the Admin API and Provider API.
 
-The first thing to do is get a list of all resourceTypes. A good point to make here is that this will only return resourceTypes that vRA knows about. So if you haven't defined the Custom Resource that you want to change in Advanced Services &gt; Custom Resources, then it wont show up.
+The first thing to do is get a list of all resourceTypes. A good point to make here is that this will only return resourceTypes that vRA knows about. So if you haven't defined the Custom Resource that you want to change in Advanced Services > Custom Resources, then it wont show up.
 
 Fire up your favorite REST client, <a href="http://grantorchard.com/vcac/concepts/vcac-6-1-api-authentication/" target="_blank">grab a bearer token</a> and execute a **GET** request to api/resourceTypes:
 
@@ -37,7 +37,7 @@ You will need to grab the ParentType of the Custom Resource.. In this example I'
 
 Now we need to execute a **PUT** request against the Provider API to update the resourceType.
 
-The end point for this is /api/provider/resourceTypes/&lt;typeId&gt;. Where typeId in this case is **cs_AD**.
+The end point for this is /api/provider/resourceTypes/<typeId>. Where typeId in this case is **cs_AD**.
 
 <code>https://vra-app.local/catalog-service/api/provider/resourceTypes/cs_AD</code>
 

@@ -20,6 +20,7 @@ The [documentation]("http://pubs.vmware.com/vrealize-automation-72/topic/com.vmw
 <!--more-->
 
 ## Workflows
+
 Here is an example body for a workflow that has one input parameter called name. Input parameters are specified in the **requestData** property as a **literalMap**. A literalMap is an array of key value pairs where **key** is the name of the parameter and **value** describes what is expected. For example; the **type** (e.g. string) and **value** (e.g. Test) required by the input parameter.
 
 ``` Javascript
@@ -42,7 +43,9 @@ Here is an example body for a workflow that has one input parameter called name.
     "callbackServiceId":  null
 }
 ```
+
 ### Example
+
 In the following example we execute the **Force data collection** library workflow:
 
 <script src="https://gist.github.com/chelnak/dd60d927343065fbd2dc46040d53bd65.js"></script>
@@ -50,6 +53,7 @@ In the following example we execute the **Force data collection** library workfl
 **Tip**: I found that you don't need to pass complex types for inventory objects. You can see in the example above that I am just passing the id of the registered vCACHost.
 
 ## Retrieving information about an execution
+
 The documentation states that a successful request will return the "run request id". This id can be used to request information about the execution of a workflow. It can be retrieved by examining the **location** property in the response headers. For example:
 
 ``` PowerShell
@@ -65,11 +69,12 @@ In the example below, the request id is used to request some basic information a
 
 In addition to the example above, the following requests could be made:
 
- * /o11n-gateway-service/api/tenants/Tenant01/requests/bf6cdf7e-b1ba-42fb-99a2-6d4c31d56c27/**cancel**
- * /o11n-gateway-service/api/tenants/Tenant01/requests/bf6cdf7e-b1ba-42fb-99a2-6d4c31d56c27/**logs**
- * /o11n-gateway-service/api/tenants/Tenant01/requests/bf6cdf7e-b1ba-42fb-99a2-6d4c31d56c27/**result**
+* /o11n-gateway-service/api/tenants/Tenant01/requests/bf6cdf7e-b1ba-42fb-99a2-6d4c31d56c27/**cancel**
+* /o11n-gateway-service/api/tenants/Tenant01/requests/bf6cdf7e-b1ba-42fb-99a2-6d4c31d56c27/**logs**
+* /o11n-gateway-service/api/tenants/Tenant01/requests/bf6cdf7e-b1ba-42fb-99a2-6d4c31d56c27/**result**
 
 ## Actions
+
 Executing an actions isn't as complicated as workflows. We only need to specify a literalMap as the body. Once again, **key** is the name of the input parameter and **value** describes what is expected. So in this example we have a parameter called example which is expecting a string.
 
 ``` Javascript
@@ -86,7 +91,6 @@ Executing an actions isn't as complicated as workflows. We only need to specify
 }
 ```
 
-### Example
 In the following example we are executing a custom action called **testAction** which is in the **test** module:
 
 <script src="https://gist.github.com/chelnak/6d99d1a37dd44262925cae9152a77e85.js"></script>

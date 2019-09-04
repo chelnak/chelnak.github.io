@@ -17,7 +17,7 @@ It turns out (and is quite logical when considered) that you need to construct t
 
 If you open a form and take a look at the URL in the browser it looks something like this:
 
-```
+```PowerShell
 http://[webapp]/[Site]/_Layouts/FormServer.aspx?XmlLocation=/[Site]/[Forms %Library]/[Form].xml&[SomeSettings]&DefaultItemOpen=1
 ```
 
@@ -27,7 +27,7 @@ It is important to append a source perameter to the end of the URL. This will te
 
 Resulting in the URL looking like this:
 
-```
+```PowerShell
 http://[webapp]/[hr]/_layouts/FormServer.aspx?XmlLocation=[%Current Item:Encoded Absolute URL%]&ClientInstalled=true&Source=[PageReturURL]%3FInitialTabId%3DRibbon%252EDocument%26VisibilityContext%3DWSSTabPersistence&DefaultItemOpen=1
 ```
 

@@ -15,7 +15,7 @@ After having some issues with the Search Service Application that is created whe
 
 Looking at the event logs on the server in question led me to two warning events (Event ID 57) around the same time as I had clicked in to the Search Service App:
 
-![](/assets/images/EventID57-b-300x209.png)
+![EventID57](/assets/images/EventID57-b-300x209.png)
 
 The above warnings suggested that (for some reason) even though I had selected my search service account (SP_Search) to run the search application it was in fact trying to run and access the search database with SP_ServiceApps, which is a generic managed account for some other Service Applications.
 

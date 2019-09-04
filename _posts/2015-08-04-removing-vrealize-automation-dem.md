@@ -12,29 +12,39 @@ tags:
 ---
 This is just a quick post that is more for personal reference more than anything.
 
-**I need to point out that this is probably not supported by VMware so please don't carry out the steps below unless you fully accept that you could cause irreversible damage to your environment.**
+> :rotating_light: I need to point out that this is probably not supported by VMware so please don't carry out the steps below unless you fully accept that you could cause irreversible damage to your environment.
 
 I needed to move my original test design around a bit and this involved installing new highly available DEM Ochestrators and removing the old one.
 
-Uninstalling the old DEM Orchestrator instance wasn't a problem, however, I noticed that it was still listed in **Distributed Execution Status** as offline.
+Uninstalling the old DEM Orchestrator instance wasn't a problem, however, I noticed that it was still listed in `Distributed Execution Status` as offline.
 
 Here are the steps that I took to fully remove the old DEM Orchestrator from my environment:
-<ol>
+
 * **Snapshot, snapshot, snapshot!**
 * Install the two new DEM Orchestrator instances
 * Uninstall the old DEM Orchestrator instance
 * **Back up your IAAS database!**
 * Remove the old DEM Orchestrator entry from the IAAS database
-</ol>
+
 <!--more-->
-<h3>Step 5 Explanation</h3>
+
+## Step 5 Explanation
+
 First double check that the entry for the old instance is present:
-```use vCAC
+
+```SQL
+use vCAC
 SELECT * FROM [DynamicOps.RepositoryModel].DEMs
-go```
+go
+```
+
 You should see the old DEM Orchestrator instance in the list. Remove it with the following TSQL statement:
-```use vCAC
+
+```SQL
+use vCAC
 DELETE FROM [DynamicOps.RepositoryModel].DEMs
 WHERE FriendlyName = 'OLD-DEM-ORCHESTRATOR'
-go```
+go
+```
+
 Now restart the IAAS services and take a look back in Distributed Execution Status. The entry should now be gone.

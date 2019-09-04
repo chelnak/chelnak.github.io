@@ -14,14 +14,14 @@ If you are using Ubuntu server behind a proxy you will need to manually add it. 
 
 Usually when adding a proxy via the CLI in ubuntu you would use the http_proxy variables and add it to the /root/.bashrc file..
 
-```
+```PowerShell
 http_proxy http://user:password@proxy:port/
 export http_proxy
 ```
 
 For some reason I have had a few issues with this but have found that editing /etc/apt/apt.conf with the following line works a treat.. I'm not to sure why but if it works it works.
 
-```
+```PowerShell
 Acquire::http::Proxy http://proxy:port
 ```
 

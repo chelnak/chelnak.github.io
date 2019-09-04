@@ -12,7 +12,7 @@ Ahhh! My first form is almost finished... Just thought i'd blog this function (e
 
 I needed to ensure a few fields were always lowercase so I applied the translate function as a rule to the required fields:
 
-```
+```PowerShell
 translate(.,"ABCDEFGHIJKLMNOPQRSTUVWYXZ", "abcdefghijklmnopqrstuvwyxz")
 ```
 
@@ -20,4 +20,4 @@ translate(.,"ABCDEFGHIJKLMNOPQRSTUVWYXZ", "abcdefghijklmnopqrstuvwyxz")
 
 The rule it self looks like this:
 
-![](/assets/images/Rule-300x184.png)
+![Rule](/assets/images/Rule-300x184.png)

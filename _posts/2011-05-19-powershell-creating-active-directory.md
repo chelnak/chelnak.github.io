@@ -17,7 +17,7 @@ You can find the post [here](http://www.thejoyofcode.com/Creating_AD_user_accoun
 What I especially liked about this script is that it let you enable the accounts and set their passwords all within the foreach loop (not being much of a coder this excided me as I'd seen many examples that didn't include this)
 Anyway, here is the code from josh's blog:
 
-```
+```PowerShell
 $users = import-csv "C:usersToBeCreated.csv"
 $container = [ADSI] "LDAP://cn=Users,dc=YourDomain,dc=local"
 $users | foreach {
