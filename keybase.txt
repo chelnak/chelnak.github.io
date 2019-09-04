@@ -1,0 +1,88 @@
+==================================================================
+https://keybase.io/craiggumbley
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://helloitscraig.co.uk
+  * I am craiggumbley (https://keybase.io/craiggumbley) on keybase.
+  * I have a public key with fingerprint 3A16 0EC3 4F16 8B76 D695  8D17 AC22 91CF 2905 6C5C
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010198f9f6ff20946deb4a35e709f5418761866920434a067ce8cf8328bf6273f2410a",
+      "fingerprint": "3a160ec34f168b76d6958d17ac2291cf29056c5c",
+      "host": "keybase.io",
+      "key_id": "ac2291cf29056c5c",
+      "kid": "0101dc15974bbdac8030dd03c41c826748b21facd2319d4fe746940f9cd070a337860a",
+      "uid": "824a1b0c005e7d26b429ae64f9efc719",
+      "username": "craiggumbley"
+    },
+    "merkle_root": {
+      "ctime": 1567591871,
+      "hash_meta": "599762648ff23bae5e781daffb7fa9716d3dc0c3060cab05ae3514e53e3f59e4",
+      "seqno": 6167359
+    },
+    "revoke": {
+      "sig_ids": [
+        "7dd3d59928518f741e6bed83a4e4ed3e03946da26818a5de9b51df5027e3524a0f"
+      ]
+    },
+    "service": {
+      "hostname": "helloitscraig.co.uk",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1567591873,
+  "expire_in": 157680000,
+  "prev": "633784358f09f7cf564b2af2eefa433ecea24292a7b8985b9d1049b2c7d71e55",
+  "seqno": 52,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.3
+Comment: https://keybase.io/crypto
+
+yMQJAnicbZN9bBRFGMavlCKUoIWIARq+VrAF+rGzuzO7e2m1YCumtEqsxbQFjtnZ
+mevmrrdl96600iJWiVDRKMiHYrQo2qBgKQIRqMBBibYgX5oohCJgwjcRQooIgs42
+GBLj/LOZzfM+7zO/d6ZjUKIvOWGD8O7hCUnhmQkH9r4a882y34rPFwzbrBP884UQ
+7f3QsEndaCBkmYJfEIEIdI3pDDEmibqCTGooWIZUFXUGFaCpCGgI6ZKoyAoWkUqo
+RpgmS5rBkKTKTFKAiIUMgVmRIHWqHSsS5bYyBkikRFYYQJqhIhPpUDOBiokk6YAw
+SRchIpDwwkrb9Sp4OAO7NMuy+T++CfTG+x/9g9wmAVBXFcMwMdFEWTRNUSYKIJqE
+VEUzJMAwMSUZ6KbCqKogXRGZTkxRFbEsqxrqzR3rtdMkBQNDJKLIT25KyFAkHVOk
+MJ0yogLdE7rUieAqytXEwVYwGKsywpxoQ4ZQRZ1QmAYc2456gEnU8mQAIhXqnCDg
+h8RuZaCKRjGvhrquIgkpGicuG5jyjhowMWOGyrCuAmTKJhGJLCKRYEOEmMoQKBTK
+VGZQpwrP4tK5EVvwI4BUGeo8gUNr7BD1mrtWkKNzBX+FoJrciXeTNAg0piqAIoOa
+mowVqlBTpqLszRtLSAMahibVDQhMBkVJ5R05EJEJsxq8Zk6NRXrNvVndZ1BJw2Hb
+irq9LLKInRUL8WDVjh21iR32BNFotev38ETrqr2KedQI3PcKGFbE5BeGV9RQx7Xs
+CMfFlf8lJ2cItLbacmjA8hRQRZrIl9eH1nBL5M1RkaHG+G1VCYNIMSTMJEoZVmSZ
+EoolPkkJq4ama9DQTSAquiER1VQBhfABSijxnDjIPTnACI7GHCo07I3P7OtLSPb1
+S+rjvSRf8oCUf99X1w+P3Bt/aWdZ+c6hGWN2PFae2NZal9Mt9K+/U9iYW7ocTh7Z
+Nid2tWAxe91NOpG7p6Jv5/5g4uGv7ZLhp4ueTP+iWNmGR4TdNXD43zM2d+/rNyVQ
+dH7Tlty5d0dp34QuNg5b+uK0Ex21Y8vGgQ9Tb9VvWbjoSEbh6ML3hkxcvr5jlexb
+d6p56QV1dfG6jb/FK+2cCwceyl95ubW6vXbgrZp91vDjo187Nik9cnd79rNrL7eP
+WpC6MJX0bKmoCq25nHDyyoxaMvrkXn/2hLQ+mQW/FH+Zejb455mDsVhubs3cGcta
+xr6Ne+7Fe051fvDRgFurzv9U4Xz21EWY/nGWHmJq8a6jiW+WXlr91ZqitPLmfkc3
+p93c7U6c1JaDk+rB4FfKX96Xeg+1pBdtu9K9dW3n1pSp8YY3Dj39+8SO90u7xP2P
+5hXu3j3KdyY87gVr9qfF6Yek6PGNG7+vN0/kVXTljT1SlzO+sWdl2dVPJt++tn56
+e0lpcvvin1tGzP48LyGzLIbYuKO+OU1DHt+zK7t1fn7oXCkZs+L56/mpJWVp6Ntl
+zdu/e2Z6E7gwb1r/m3rmjqaUBdfKuzuzR47/y3n40ulfb3Sdfen61Cklgxc9Ecxb
+8uOVSqs5deBzYGhKSnzqH/4R4Pqm1rZN8YsFK/Jjt48PUk7uSEkvKW3q30JuNPSt
+PcbkzEY37WBxbdvCzoINPXeGvdOVc+4fnqn5tQ==
+=jp7E
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/craiggumbley
+
+==================================================================
