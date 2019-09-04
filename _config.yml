@@ -58,3 +58,6 @@ exclude:
   - node_modules
   - build.sh
   - README.md
+  - package-lock.json
+  - LICENCE
+
