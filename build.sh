@@ -2,6 +2,13 @@
 
 set -e
 
+echo "Restoring dependencies"
+bundle install
+
+echo "Linting markdown"
+bundle exec mdl _posts/ --config .markdownlint.json
+bundle exec mdl __pages/ --config .markdownlint.json
+
 echo "Cleaning project"
 rm -rf _site/
 
