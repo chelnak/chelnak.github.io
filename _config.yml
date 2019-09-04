@@ -56,4 +56,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - update_boostrap.sh
+  - build.sh
+  - README.md
