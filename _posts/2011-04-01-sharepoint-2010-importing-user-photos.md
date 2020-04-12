@@ -43,7 +43,7 @@ Finally the `Update-SPProfilePhotoStore` cmdlet to re-size the the photos so tha
 
 Open the SharePoint 2010 Management Shell with a user account that has the correct privileges to administer SharePoint and type the following.
 
-```
+```powershell
 Update-SPProfilePhotoStore -MySiteHostLocation http://my.domain.com/-CreateThumbnailsForImportedPhotos $True
 ```
 

@@ -23,7 +23,7 @@ In the future I will post more articles covering how to use each of the addition
 
 ## Installation
 
-```
+```powershell
 Install-Module -Name GitHubReleaseManager -Scope CurrentUser
 ```
 
@@ -51,7 +51,7 @@ Before you start you'll need to create a [Personal Access Token](https://help.gi
 
 Once you have generated the token use **Set-GitHubSessionInformation** to set up your session:
 
-```
+```powershell
 Set-GitHubSessionInformation -Username user -APIKey xxxxxxxxxxxxxxxxxxx
 ```
 
@@ -59,7 +59,7 @@ You can view the current session configuration at any time with **Get-GitHubSess
 
 Now that you have your session set up let's create a release against the Master branch of a repository:
 
-```
+```powershell
 New-GitHubRelease -Repository TestRepository -Name TestRelease -Description "Test v1.0 release" -Target master -Tag v1.0
 ```
 
@@ -67,7 +67,7 @@ It's also possible to create a release and add one or more assets by using the A
 
 In the example below we add a single Zip archive:
 
-```
+```powershell
 $Asset @{
     "Path" = ".\Release\MyRepositoryAsset.zip"
     "Content-Type" = "application/zip"

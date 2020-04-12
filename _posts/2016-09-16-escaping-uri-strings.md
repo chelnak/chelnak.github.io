@@ -21,7 +21,7 @@ To reverse an escaped string you can use `[uri]::UnescapeDataString(*string stri
 
 An ![interesting issue](https://github.com/jakkulabs/PowervRA/issues/121) was raised on one of my community projects recently. A contributor pointed out that one of our functions did not work when you chose to filter by name and the string passed to the Name parameter contained an ampersand (&).
 
-```
+```powershell
 Get-vRABusinessGroup -Name "Hello & Hello"
 ```
 

@@ -33,7 +33,7 @@ Now that the JSON template is saved as a resource element, there is a good chanc
 
 This can be easily done by parsing the file with JSON.parse. JSON.parse will take a JSON string and parse it in to an object. Once parsed, you can access individual fields and update them using the following synatax:
 
-```
+```javascript
 jsonObject['name'] = "A new name!"
 ```
 

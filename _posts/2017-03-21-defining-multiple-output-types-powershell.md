@@ -18,7 +18,7 @@ You can use the **ParameterSetName** property in the declaration. For example:
 
 <!--more-->
 
-```
+```powershell
 
 [CmdletBinding(DefaultParameterSetName="A")]
 [OutputType('[System.String]', ParameterSetName="A")]

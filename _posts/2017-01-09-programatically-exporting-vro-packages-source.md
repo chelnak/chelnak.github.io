@@ -28,7 +28,7 @@ In the following example, I'm using vRealize Orchestrator 7.0.1 (embedded in the
 
 Create a new directory. This will be the home to the exported package and a few other tools that you are going to need.
 
-```
+```powershell
 mkdir TestPackageRepository
 cd TestPackageRepository
 ```

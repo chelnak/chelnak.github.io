@@ -27,7 +27,7 @@ Making use of this parameter will allow you to [insert white space into the out
 
 The screenshot below uses the following line of code:
 
-```
+```javascript
 System.log(JSON.stringify(object, null, 2);
 ```
 

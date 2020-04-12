@@ -17,7 +17,7 @@ vRA email templates are split between the virtual appliance, which uses Apache V
 <!--more-->
 
 The template for this email is on the IAAS host in the following directory:
-```%systemdrive%Program Files(x86)VMwarevCACServerTemplates```
+`%systemdrive%Program Files(x86)VMwarevCACServerTemplates`
 The file that needs editing is: **LeaseAboutToExpire.xslt**
 
 Take a back up the Templates folder before you change any of the xslt files inside. It's better to be safe than sorry and this will mean that if you get into a mess you can just replace the broken stylesheet with the old working on.

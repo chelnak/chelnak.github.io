@@ -34,7 +34,7 @@ Before firing up cloudclient, you will need to make sure you have your autologin
 
 To create an autologinfle run the following:
 
-```
+```bash
 ./cloudclient login autologinfile
 ```
 

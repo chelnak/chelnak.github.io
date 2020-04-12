@@ -35,7 +35,7 @@ You will notice that the script references the #s4-leftpannel id. This is the i
 
 Once the corners were sorted I needed to apply some custom CSS to the quick launch so it matched our brand. Here is what I used and the end result. (Again, this may not be the right/preferred way but it works for me.)
 
-```
+```css
 body #s4-leftpanel{
  background-color: rgb(236,236,236);
  margin:15px 0px 0px 0px;

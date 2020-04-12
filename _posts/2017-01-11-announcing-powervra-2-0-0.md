@@ -48,7 +48,7 @@ There are two awesome things I want to mention here. The first is that PowervRA
 
 You can grab the latest version of the image directly from docker hub:
 
-```Bash
+```bash
 docker pull vmware/powerclicore
 docker run --rm -it vmware/powerclicore
 ```
@@ -61,7 +61,7 @@ Then there is the case of unsupported Operating Systems. For example, at the tim
 
 Our image is also available on docker hub:
 
-```Bash
+```bash
 docker pull jakkulabs/powervra
 docker run --rm -it jakkulabs/powervra
 ```

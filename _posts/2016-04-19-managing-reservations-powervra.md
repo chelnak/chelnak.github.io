@@ -22,7 +22,7 @@ I'm pleased to announce though that version 1.1.0 introduces support for managin
 
 To view all reservations you can use **Get-vRAReservation**. Optionally you can use the Name parameter to get a single reservation
 
-```
+```powershell
 Get-vRAReservation
 Get-vRAReservation | Select-Object Name
 Get-vRAReservation -Name Reservation01
@@ -36,20 +36,20 @@ There is a bit of leg work involved in creating a new reservation... but it's wo
 
 First you will need to get the compute resource that you want to  use in the new reservation:
 
-```
+```powershell
 $ComputeResource = Get-vRAReservationComputeResource -Type vSphere -Name "Cluster01 (vCenter)"
 ```
 
 Next up, you need to define the storage and networks that you want to use. Using networks as an example. Start by creating a new array, then creating a new definition for each network that we want to utilise and add it to the array. This array can then be passed to the New-vRAReservation command later.
 
-```
+```powershell
 # --- Get the network definition
 $NetworkDefinitionArray = @()
 $Network1 = New-vRAReservationNetworkDefinition -Type vSphere -ComputeResourceId $ComputeResource.Id -NetworkPath "VM Network" -NetworkProfile "Test" -Verbose
 $NetworkDefinitionArray += $Network1
 ```
 
-```
+```powershell
 # --- Get the storage definition
 $StorageDefinitionArray = @()
 $Storage1 = New-vRAReservationStorageDefinition -Type vSphere -ComputeResourceId $ComputeResource.Id -Path "NFS001" -ReservedSizeGB 10 -Priority 0 -Verbose
@@ -58,27 +58,27 @@ $StorageDefinitionArray += $Storage1
 
 Finally, using a bit of <a href="https://technet.microsoft.com/en-us/magazine/gg675931.aspx" target="_blank">splatting</a>, we gather all of the information needed and create the new reservation.
 
-```
+```powershell
 $Param = @{
-Type = "vSphere"
-Name = "Reservation20"
-Tenant = "Tenant01"
-BusinessGroup = "Default Business Group[Tenant01]"
-ReservationPolicy = "ReservationPolicy1"
-Priority = 0
-ComputeResourceId = $ComputeResource.Id
-Quota = 0
-MemoryGB = 20
-Storage = $StorageDefinitionArray
-Resourcepool = "Resources"
-Network = $NetworkDefinitionArray
-EnableAlerts = $true
-StorageAlertPercentageLevel = 20
-EmailBusinessGroupManager = $true
-AlertRecipients = "testuser@vsphere.local"
+  Type = "vSphere"
+  Name = "Reservation20"
+  Tenant = "Tenant01"
+  BusinessGroup = "Default Business Group[Tenant01]"
+  ReservationPolicy = "ReservationPolicy1"
+  Priority = 0
+  ComputeResourceId = $ComputeResource.Id
+  Quota = 0
+  MemoryGB = 20
+  Storage = $StorageDefinitionArray
+  Resourcepool = "Resources"
+  Network = $NetworkDefinitionArray
+  EnableAlerts = $true
+  StorageAlertPercentageLevel = 20
+  EmailBusinessGroupManager = $true
+  AlertRecipients = "testuser@vsphere.local"
 }
 
-New-vrareservation @Param
+New-vRAReservation @Param
 ```
 
 If successful, the cmdlet will return the new reservation.
@@ -95,13 +95,13 @@ In [this gist](https://gist.github.com/chelnak/863c61425685e87ca060f27295c3dafa)
 
 If you want to duplicate an existing reservation you can use **Get-vRAReservationTemplate** along with **New-vRAReservation**.
 
-```
+```powershell
 Get-vRAReservation -Name Reservation20 | Get-vRAReservationTemplate | New-vRAReservation -NewName CopiedReservation01
 ```
 
 Alternatively, you can save the template to a text file for use elsewhere.
 
-```
+```powershell
 Get-vRAReservation -Name Reservation20 | Get-vRAReservationTemplate -OutFile C:\Reservations\Reservation.json
 ```
 
@@ -109,7 +109,7 @@ Get-vRAReservation -Name Reservation20 | Get-vRAReservationTemplate -OutFile C:\
 
 Removing a reservation is simple. You can use **Get-vRAReservation** and pipe it to **Remove-vRAReservation**.
 
-```
+```powershell
 Get-vRAReservation -Name Reservation20 | Remove-vRAReservation
 ```
 
@@ -119,7 +119,7 @@ Updating a reservation comes in a few different parts. We decided it would be be
 
 To update the core properties of a reservation you can use **Set-vRAReservation**.
 
-```
+```powershell
 Get-vRAReservation -Name Reservation20 | Set-vRAReservation -Name Reservation20-Updated
 ```
 
@@ -133,13 +133,13 @@ So for managing the storage associated with a reservation we have **Add-vRARese
 
 **Set-vRAReservationStorage** will update properties of a datastore that is currently associated with a reservation.
 
-```
+```powershell
 Get-vRAReservation -Name "Reservation01" | Set-vRAReservationStorage -Path "Datastore01"  -ReservedSizeGB 20 -Priority 10
 ```
 
 **Add-vRAReservationStorage** will add new storage to a reservation.
 
-```
+```powershell
 Get-vRAReservation -Name Reservation01 | Add-vRAReservationStorage -Path "Datastore01" -ReservedSizeGB 500 -Priority 1
 ```
 
@@ -149,24 +149,24 @@ For managing networks, we have **Set-vRAReservationNetwork** and **Add-vRAReser
 
 **Set-vRAReservationNetwork** will update the network profile of an associated network.
 
-```
+```powershell
 Get-vRAReservation -Name "Reservation01" | Set-vRAReservationNetwork -NetworkPath "VM Network" -NetworkProfile "Test Profile 1"
 ```
 
 To remove a network profile you can pass an empty string to the NetworkProfile parameter.
 
-```
+```powershell
 Get-vRAReservation -Name "Reservation01" | Set-vRAReservationNetwork -NetworkPath "VM Network" -NetworkProfile ""
 ```
 
 **Add-vRAReservationNetwork** will add a new network  to a reservation and optionally associate a network profile.
 
-```
+```powershell
 Get-vRAReservation -Name Reservation01 | Add-vRAReservationNetwork -NetworkPath "DMZ" -NetworkProfile "DMZ-Profile"
 ```
 
 As a final note. Don't forget that you can check out the help associated with a cmdlet if you get stuck.
 
-```
+```powershell
 Get-Help -Name Get-vRAReservation -Full
 ```

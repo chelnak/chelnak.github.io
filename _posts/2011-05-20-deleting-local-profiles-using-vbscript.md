@@ -18,7 +18,7 @@ Here's the script anyway - I ran this locally on each machine but it can easily 
 
 <!--more-->
 
-```
+```vb
 Const LocalDocumentsFolder = "C:\Documents and Settings"
 
 set objFolder = objFSO.GetFolder(localdocumentsfolder)

@@ -17,13 +17,13 @@ While working in a vRA 7.0.1 environment recently I came across an interesting
 
 Taking a closer look at the vco service revealed the following error:
 
-```
+```powershell
 Exeception during remote status retrieval for url: https://vra.company.local:8281/vco/api/status. Error Message I/O error on GET request for "https://vra.company.local:8281 [vra.company.com/127.0.0.1] failed: Connection refused: nested exception is org.apache.http.conn.HttpHostConnectException: Connect to vra.company.local:8281 [vra.company.com/127.0.0.1] failed: Connection refused.
 ```
 
 The first thing that caught my eye was that requests were being made on port 8281. This shouldn't be the case as the embedded vRO instance is exposed on port 443. A quick curl to the endpoint url confirmed that this was the case.
 
-```Bash
+```bash
 curl https://vra.company.local:8281/vco/api/status - Did not work
 
 curl https://vra.company.local:443/vco/api/status - Worked as expected

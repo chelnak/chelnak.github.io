@@ -16,19 +16,19 @@ Here is a quick tip that will show you how to quickly troubleshoot a failed requ
 
 Connect to your vRA instance:
 
-```
+```powershell
 Connect-vRAServer -Server vra.corp.local -Tenant Tenant01 -Credential (Get-Credential) -IgnoreCertRequirements
 ```
 
 Now find the failed request:
 
-```
+```powershell
 Get-vRAConsumerRequest | Where-Object {$_.StateName -eq "Failed"} | Select RequestNumber, RequestedItemName, StateName | Sort-Object -Property RequestNumber
 ```
 
 Then to determine the cause, take a look at the requestCompletion property of the request:
 
-```
+```powershell
 (Get-vRAConsumerRequest -RequestNumber 121).RequestCompletion | Format-List
 
 requestCompletionState : FAILED

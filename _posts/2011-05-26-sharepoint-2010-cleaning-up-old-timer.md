@@ -20,7 +20,7 @@ First step is to load the SharePoint 2010 Management Shell. From here we want to
 
 To get to the GUID I piped the Format-List command along with DisplayName and Id (which is the GUID we need to remove the job).
 
-```
+```powershell
 Get-SPTimerJob | fl DisplayName,Id
 ```
 
@@ -28,13 +28,13 @@ Get-SPTimerJob | fl DisplayName,Id
 
 Now use STSADM.exe along with the GUID of the timer job that needs removing.
 
-```
+```powershell
 stsadm -o deleteconfigurationobject -id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
 Alternatively you could drop the timer job in to a variable and use the delete() method:
 
-```
+```powershell
 $t = Get-SPTimerJob -Identity xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 $t.Delete()
 ```
