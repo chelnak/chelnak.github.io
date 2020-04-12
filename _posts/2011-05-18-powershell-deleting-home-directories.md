@@ -25,7 +25,7 @@ Construct the csv file in the following format (Where UserX is your own data):
 
 **Users.csv:**
 
-```PowerShell
+```
 Name
 User1
 User2
@@ -34,7 +34,7 @@ User3
 
 Save the CSV in the folder that holds the directories that are going to be moved and Open PowerShell as an administrator.
 
-```PowerShell
+```
 $dir = Import-Csv Users.csv
 $dir | ForEach-Object {$_."Name" | Remove-Item -Force -Recurse}
 ```

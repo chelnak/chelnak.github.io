@@ -28,7 +28,7 @@ You might want to scan over **[this document](http://pubs.vmware.com/vCAC-61/ind
 
 If you open up an unedited version of LeaseAboutToExpire.xslt you'll notice that **VirtualMachineEx/Expires** is called with the substring-before function:
 
-```PowerShell
+```
 <xsl:value-of select="substring-before(//VirtualMachineEx/Expires, 'T')>
 ```
 

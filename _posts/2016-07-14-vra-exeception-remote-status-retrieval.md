@@ -17,7 +17,7 @@ While working in a vRA 7.0.1 environment recently I came across an interesting
 
 Taking a closer look at the vco service revealed the following error:
 
-```PowerShell
+```
 Exeception during remote status retrieval for url: https://vra.company.local:8281/vco/api/status. Error Message I/O error on GET request for "https://vra.company.local:8281 [vra.company.com/127.0.0.1] failed: Connection refused: nested exception is org.apache.http.conn.HttpHostConnectException: Connect to vra.company.local:8281 [vra.company.com/127.0.0.1] failed: Connection refused.
 ```
 

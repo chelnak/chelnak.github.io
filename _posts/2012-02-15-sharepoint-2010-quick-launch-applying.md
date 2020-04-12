@@ -28,14 +28,14 @@ It might be worth noting that I am also using one of the starter Master Pages cr
 
 Okay, so make sure you have links in your Master Page to the jquery plugin and the jquery.corners plugin you have just uploaded. I like to link to an external copy of jquery.min for ease.
 
-The two lines above can go between the ```<head></head>``` tags in your Master Page.
+The two lines above can go between the `<head></head>` tags in your Master Page.
 Just after these two links copy and paste the script below.
 
 You will notice that the script references the #s4-leftpannel id. This is the id of the div that surrounds the quick launch. Now save, publish/approve your master page and look at the results.
 
 Once the corners were sorted I needed to apply some custom CSS to the quick launch so it matched our brand. Here is what I used and the end result. (Again, this may not be the right/preferred way but it works for me.)
 
-```PowerShell
+```
 body #s4-leftpanel{
  background-color: rgb(236,236,236);
  margin:15px 0px 0px 0px;

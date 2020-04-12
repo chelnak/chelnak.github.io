@@ -23,7 +23,7 @@ Now select Manage User Properties from under the people heading. Once the page h
 
 ![PictureProperty](/assets/images/PictureProperty.png)
 
-On the Properties page make sure ```Do not allow users to edit values for this property``` is selected then add a new mapping. Select your synchronisation connection, attribute you wish to map (thumbnailPhoto) and the direction, which in this case is Import.
+On the Properties page make sure `Do not allow users to edit values for this property` is selected then add a new mapping. Select your synchronisation connection, attribute you wish to map (thumbnailPhoto) and the direction, which in this case is Import.
 
 ![Sync](/assets/images/Sync.png)
 
@@ -33,17 +33,17 @@ Once the mapping has been added navigate back to the User Profile Service Applic
 
 ![StartSync](/assets/images/StartSync.png)
 
-To verify that the sync is successfully operating load up miisclient.exe. The executable can be found at ```C:Program FilesMicrosoft Office Servers14.0Synchronization ServiceUIShellmiisclient.exe```. Obviously the path will vary depending on where you installed the server.
+To verify that the sync is successfully operating load up miisclient.exe. The executable can be found at `C:Program FilesMicrosoft Office Servers14.0Synchronization ServiceUIShellmiisclient.exe`. Obviously the path will vary depending on where you installed the server.
 
 ![MIISCLIENT](/assets/images/MIISCLIENT.png)
 
 As the service imports the users and information into SharePoint you will notice that a number of updates are appearing in the Synchronisation Statistics section. Click on the Updates link and select a user from the list. In the information displayed the thumbnailPhoto attribute should (if the sync has been a success) be populated with a hexadecimal value.
 
-Finally the ```Update-SPProfilePhotoStore``` cmdlet to re-size the the photos so that they can be used in all the right places around SharePoint.
+Finally the `Update-SPProfilePhotoStore` cmdlet to re-size the the photos so that they can be used in all the right places around SharePoint.
 
 Open the SharePoint 2010 Management Shell with a user account that has the correct privileges to administer SharePoint and type the following.
 
-```PowerShell
+```
 Update-SPProfilePhotoStore -MySiteHostLocation http://my.domain.com/-CreateThumbnailsForImportedPhotos $True
 ```
 

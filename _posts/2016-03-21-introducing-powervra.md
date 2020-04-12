@@ -35,13 +35,13 @@ You can find the project on [GitHub](http://vexpert.me/PowervRA). If you have a 
 
 If you have PowerShell 5 installed, you can grab the module from the <a href="https://www.powershellgallery.com/" target="_blank">PowerShell Gallery</a>by running the following command:
 
-```PowerShell
+```
 Install-Module -NamePowervRA
 ```
 
 If not, you can grab the latest release straight form the GitHub repository with this handy one liner:
 
-```PowerShell
+```
 (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/jakkulabs/PowervRA/master/Get-PowervRA.ps1") | iex
 ```
 
@@ -49,7 +49,7 @@ If not, you can grab the latest release straight form the GitHub repository with
 
 You can view help for any cmdlet from the PowerShell console with the Get-Help command:
 
-```PowerShell
+```
 Get-Help -Name Get-vRAService
 ```
 
@@ -59,7 +59,7 @@ Alternatively, you can head over to our [Read the Docs](http://powervra.readthed
 
 Before you get going you will need to connect to an instance of vRA. If you are using self signed certificates, ensure that you usethe **IgnoreCertRequirements** switch.
 
-```PowerShell
+```
 Connect-vRAServer -Server vra01.company.local -Tenant Tenant01 -Credential (Get-Credential) -IgnoreCertRequirements
 ```
 
@@ -69,7 +69,7 @@ If successfulthe cmdlet will return information about your connection.
 
 You can view this information at anytimeby calling the global variable **vRAConnection**:
 
-```PowerShell
+```
 $GLOBAL:vRAConnection
 ```
 
@@ -79,7 +79,7 @@ So lets say that you want to quickly check that all of the core vRA services are
 
 To list each service and it's current status run the following:
 
-```PowerShell
+```
 Get-vRAApplianceServiceStatus | Select-Object Name, Status
 ```
 
@@ -89,7 +89,7 @@ Get-vRAApplianceServiceStatus | Select-Object Name, Status
 
 To return service that may have failed to register, you can use **Where-Object** and query for status' that are **not equal** to REGISTERED. This could easily be incorporated in to amonitoring script and used to check the health of your vRA instance.
 
-```PowerShell
+```
 Get-vRAApplianceServiceStatus | Where-Object {$_.Status -ne "REGISTERED"}
 ```
 
@@ -97,7 +97,7 @@ Get-vRAApplianceServiceStatus | Where-Object {$_.Status -ne "REGISTERED"}
 
 In the example above the **iaas-service** has failed. We can take a closer look at what is actually going on by examining the **ErrorMessage** property:
 
-```PowerShell
+```
 $Service = Get-vRAApplianceServiceStatus -Name iaas-service
 $Service.ErrorMessage
 ```

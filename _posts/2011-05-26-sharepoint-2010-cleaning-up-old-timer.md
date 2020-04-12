@@ -14,13 +14,13 @@ After deleting the Search Service Application that got created by running the 
 
 The following steps apply to any timer job - just make sure you use the right GUID when issuing the STSADM command!
 
-First step is to load the SharePoint 2010 Management Shell. From here we want to use the ```Get-SPTimerJob``` cmdlet to get the GUID of the timer job. Running the cmdlet on its own wont display the information we need, and just lists schedule information.
+First step is to load the SharePoint 2010 Management Shell. From here we want to use the `Get-SPTimerJob` cmdlet to get the GUID of the timer job. Running the cmdlet on its own wont display the information we need, and just lists schedule information.
 
 ![Get-SPTimerJob](/assets/images/Get-SPTimerjob-300x131.png)
 
 To get to the GUID I piped the Format-List command along with DisplayName and Id (which is the GUID we need to remove the job).
 
-```PowerShell
+```
 Get-SPTimerJob | fl DisplayName,Id
 ```
 
@@ -28,13 +28,13 @@ Get-SPTimerJob | fl DisplayName,Id
 
 Now use STSADM.exe along with the GUID of the timer job that needs removing.
 
-```PowerShell
+```
 stsadm -o deleteconfigurationobject -id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
 Alternatively you could drop the timer job in to a variable and use the delete() method:
 
-```PowerShell
+```
 $t = Get-SPTimerJob -Identity xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 $t.Delete()
 ```

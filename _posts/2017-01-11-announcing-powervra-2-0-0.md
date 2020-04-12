@@ -34,7 +34,7 @@ If anything, preparing for this release highlighted the importance of test drive
 
 Currently it appears that Invoke-WebRequest has an issue parsing some response content types. In our case, Get-vRAContentData returns a content type of text/yaml. This causes the following exception:
 
-```PowerShell
+```
 Unexpected character encountered while parsing value: U. Path '', line 0, position 0.
 ```
 

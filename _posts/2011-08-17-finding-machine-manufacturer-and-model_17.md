@@ -16,7 +16,7 @@ This is obviously in a million and one places already but I found this simple cm
 
 <!--more-->
 
-```PowerShell
+```
 Get-WmiObject Win32_ComputerSystem
 ```
 

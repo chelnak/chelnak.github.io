@@ -23,7 +23,7 @@ The [documentation]("http://pubs.vmware.com/vrealize-automation-72/topic/com.vmw
 
 Here is an example body for a workflow that has one input parameter called name. Input parameters are specified in the **requestData** property as a **literalMap**. A literalMap is an array of key value pairs where **key** is the name of the parameter and **value** describes what is expected. For example; the **type** (e.g. string) and **value** (e.g. Test) required by the input parameter.
 
-``` Javascript
+```
 {
     "requestHeader":  null,
     "requestData": {
@@ -56,7 +56,7 @@ In the following example we execute the **Force data collection** library workfl
 
 The documentation states that a successful request will return the "run request id". This id can be used to request information about the execution of a workflow. It can be retrieved by examining the **location** property in the response headers. For example:
 
-``` PowerShell
+```
 $Response.Headers.Location
 https://vra.corp.local/o11n-gateway-service/api/tenants/Tenant01/workflows/9ef7fdb1-2385-4fe5-adc7-5527ca124da7/bf6cdf7e-b1ba-42fb-99a2-6d4c31d56c27
 ```
@@ -65,7 +65,7 @@ We are interested in the id at the end of the url (bf6cdf7e-b1ba-42fb-99a2-6d4c3
 
 In the example below, the request id is used to request some basic information about the execution:
 
-<img class="alignnone wp-image-1014 size-full" title="o11n-gateway-service-api" src="https://www.helloitscraig.co.uk/wp-content/uploads/2017/05/workflowInfo.png" alt="o11n-gateway-service-api" width="1166" height="202" />
+![WorkflowInfo](/assets/images/workflowInfo.png)
 
 In addition to the example above, the following requests could be made:
 
@@ -77,7 +77,7 @@ In addition to the example above, the following requests could be made:
 
 Executing an actions isn't as complicated as workflows. We only need to specify a literalMap as the body. Once again, **key** is the name of the input parameter and **value** describes what is expected. So in this example we have a parameter called example which is expecting a string.
 
-``` Javascript
+```
 {
     "entries":  [
         {

@@ -19,6 +19,6 @@ Looking at the event logs on the server in question led me to two warning even
 
 The above warnings suggested that (for some reason) even though I had selected my search service account (SP_Search) to run the search application it was in fact trying to run and access the search database with SP_ServiceApps, which is a generic managed account for some other Service Applications.
 
-Solving this issue was as simple as changing the account that the SharePoint Server Search 14 service uses to log on with to SP_Search (from services.msc), Restarting the service and issuing an ```IISRESET /noforce```.
+Solving this issue was as simple as changing the account that the SharePoint Server Search 14 service uses to log on with to SP_Search (from services.msc), Restarting the service and issuing an `IISRESET /noforce`.
 
 As soon as that was done I was able to get in to the Search Service Application and start to configure it.

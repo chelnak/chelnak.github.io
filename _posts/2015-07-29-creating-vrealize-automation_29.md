@@ -33,7 +33,7 @@ Before we start you'll need to grab a copy of Jinja2 and make sure that you have
 
 Fire up your [virtualenv](https://virtualenv.pypa.io/en/latest/) (if you are using one) and run:
 
-```PowerShell
+```
 pip install jinja2
 ```
 
@@ -53,7 +53,7 @@ To get a list of business groups along with their id's, use `getAllBusinessGroup
 
 Change directory to **examples/reservation/createReservationsJinja2 **and run the following:
 
-```PowerShell
+```
 python getAllBusinessGroups.py
 ```
 
@@ -98,7 +98,7 @@ Update params with your desired values. `ReservationName` must be unique and `Su
 
 Save and close the file and run the following:
 
-```PowerShell
+```
 python createReservation.py
 ```
 
@@ -116,6 +116,6 @@ To push things a litter further, why not incorporate [argparse](https://docs.pyt
 
 **If password is not specified, you will be prompted.**
 
-```PowerShell
+```
 python createReservation-cli.py -n 'test-res-cli' -s 'ad0073e7-401f-4a39-ac84-519a891a13ff' -u 'fabric-admin@vsphere.local' --url 'vra-01.company.com'
 ```

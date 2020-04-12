@@ -32,7 +32,7 @@ Here are the steps that I took to fully remove the old DEM Orchestrator from my 
 
 First double check that the entry for the old instance is present:
 
-```SQL
+```
 use vCAC
 SELECT * FROM [DynamicOps.RepositoryModel].DEMs
 go
@@ -40,7 +40,7 @@ go
 
 You should see the old DEM Orchestrator instance in the list. Remove it with the following TSQL statement:
 
-```SQL
+```
 use vCAC
 DELETE FROM [DynamicOps.RepositoryModel].DEMs
 WHERE FriendlyName = 'OLD-DEM-ORCHESTRATOR'

@@ -14,7 +14,7 @@ tags:
 
 One of the things that I found the most challenging when learning how to create Resource Manager templates was trying to understand which API versions to use for my resources. The [documentation](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-supported-services#supported-api-versions) is pretty clear and states that most of the time we should be aiming for the latest API version. It also contains examples showing how to get the information. For example:
 
-```PowerShell
+```
 ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).ApiVersions
 ```
 
@@ -22,7 +22,7 @@ One of the things that I found the most challenging when learning how to create 
 
 Excellent.. but copying and editing the code every time I wanted to retrieve some information was time-consuming. So to make things easier I threw together a small function that lives in my PowerShell profile. It will return a list of current supported API versions for given resource type (just like the code above). However the main difference is that when I need to query a resource I can just run the following command in my session:
 
-```PowerShell
+```
 Get-AzureRMResouceTypeAPIVersion -ProviderNamespace "Microsoft.Network" -ResourceTypeName "loadBalancers"
 ```
 

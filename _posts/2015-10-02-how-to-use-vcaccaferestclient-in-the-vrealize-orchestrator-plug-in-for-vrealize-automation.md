@@ -28,7 +28,7 @@ Exciting times :-)
 
 Before we begin to use the rest client, we need to create a new instance of vCACCAFERestClient.
 
-```Javascript
+```
 var resetClient = vCACCAFEHost.createRestClient(endpoint)
 ```
 
@@ -42,7 +42,7 @@ You can get a list of available endpoints by executing the following REST reques
 
 The response body should contain about 136 elements. Each one formatted like this:
 
-```Javascript
+```
 {
 "@type": "EndPoint",
 "id": "bdcdc296-86ab-44b6-adf4-a87d34be0734",
@@ -61,14 +61,14 @@ The response body should contain about 136 elements. Each one formatted like thi
 
 You will need to use the typeId as the parameter for createRestClient. In this example I am going to be using the reservation-service api.
 
-```Javascript
+```
 var endpoint = "com.vmware.vcac.core.cafe.reservation.api";
 var resetClient = vCACCAFEHost.createRestClient(endpoint);
 ```
 
 You can use vCACCAFERestClient.getUrl() to view the base url of the API you are going to be working with.  Adding this line will log it to the console:
 
-```Javascript
+```
 System.log(restClient.getUrl());
 ```
 
@@ -78,25 +78,25 @@ So now we can start to perform basic operations against the reservation-service
 
 The vCACCAFERestClient.get() method has one input: **resourceUrl**. We are working with the reservations API so we know this is going to be **reservations**.
 
-```Javascript
+```
 var resourceUrl = "reservations";
 ```
 
 And now execute a GET request:
 
-```Javascript
+```
 var response = restClient.get(resourceUrl);
 ```
 
 The return type of the request is vCACCAFEServiceResponse. This gives us a number of ways to handle the response. I've chosen getBodyAsJson().
 
-```Javascript
+```
 var body = response.getBodyAsJson();
 ```
 
 The reservations we want to access are in an array called content. You can iterate through these with a simple for loop and pull out any property you want. For example, you could print out the name of each reservation like this:
 
-```Javascript
+```
 var reservations = body['content'];
 
 for (var i = 0; i < reservations.length; i++) {

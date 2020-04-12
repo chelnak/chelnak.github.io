@@ -51,7 +51,7 @@ The globalconfig.py file is there just as a single location to put some common v
 
 Now that globalconfig.py is configured, lets look at getting the reservation id. Change directory to `examples/createReservations` and run the following:
 
-```PowerShell
+```
 python getAllReservations.py
 ```
 
@@ -71,7 +71,7 @@ Save and close the file.
 
 Run the following to create a json file containing your template reservation:
 
-```PowerShell
+```
 python createReservationTemplate.py
 ```
 
@@ -90,7 +90,7 @@ Before I use a payload, I always like to validate it with a parser such as [this
 
 Once you have validated the contents of reservationTemplate.json, run the following:
 
-```Powershell
+```
 python createReservation.py
 ```
 

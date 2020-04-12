@@ -28,20 +28,20 @@ In the following example, I'm using vRealize Orchestrator 7.0.1 (embedded in the
 
 Create a new directory. This will be the home to the exported package and a few other tools that you are going to need.
 
-```PowerShell
+```
 mkdir TestPackageRepository
 cd TestPackageRepository
 ```
 
 Now download the vco-cli jar file from the appliance and save it in the new directory.
 
-```PowerShell
+```
 https://vra-appliance.corp.local/vco-repo/com/vmware/o11n/tool/vco-cli-java/7.0.1/vco-cli-java-7.0.1.jar
 ```
 
 The next step is to create a keystore and key pair. This will be used to sign your package when it is being built or imported from the command line.
 
-```PowerShell
+```
 keytool -genkey -keyalg RSA -alias _DunesRSA_Alias_ -keystore example.vmokeystore -storepass password123 -validity 3650 -keysize 2048
 ```
 
@@ -49,7 +49,7 @@ keytool -genkey -keyalg RSA -alias _DunesRSA_Alias_ -keystore example.vmokeystor
 
 Exporting a package is fairly simple. You need to pass the de (directory export) parameter and the name of the package you want to export from vRO.
 
-```PowerShell
+```
 java -DserverUrl=administrator:Password@vra-appliance.corp.local:443 -DignoreServerCertificate=true -jar vco-cli-java-7.0.1.jar de com.company.test
 ```
 
@@ -66,7 +66,7 @@ You'll also notice two extra java parameters:
 * -DkeystoreFileLocation - This is the path to the keystore that was created earlier.
 * -DkeystorePassword - This is the password used to secure the keystore.
 
-```PowerShell
+```
 java -DserverUrl=administrator:Password@vra-appliance.corp.local:443 -DignoreServerCertificate=true -DkeystoreFileLocation=example.vmokeystore -DkeystorePassword=password123 -jar .\vco-cli-java-7.0.1.jar fd com.company.test
 ```
 

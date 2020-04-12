@@ -34,7 +34,7 @@ Before firing up cloudclient, you will need to make sure you have your autologin
 
 To create an autologinfle run the following:
 
-```PowerShell
+```
 ./cloudclient login autologinfile
 ```
 
@@ -60,13 +60,13 @@ Now that cloudclient is configured for autologins we need to export a list of ma
 
 To do this, run the following:
 
-```PowerShell
+```
 ./cloudclient vra machineprefix list --export **/YOUR_PATH_HERE/vRAExports/**vra-machineprefixes.json --format "JSON"
 ```
 
 If successful, the output of the script should be similar to this:
 
-```PowerShell
+```
 Output written to: /YOUR_PATH_HERE/vRAExports/vra-machineprefixes.json
 ```
 
@@ -90,7 +90,7 @@ Before it can be executed we need to edit the following variables:
 * **prefixJSONFile:** Path to your prefix json file
 * **prefixScriptFile:** Path to the resulting script file Save the file and run the following to generate the cloudclient script:
 
-```PowerShell
+```
 python createCloudClientScript.py
 ```
 
@@ -100,19 +100,19 @@ You should now have a file called `machineprefix-cloudclient-commands.sh` in the
 
 Before you go ahead and run `machineprefix-cloudclient-commands.sh`, open CloudClient.properties and update the variables we populated earlier with the correct information for `vRA-B`. At this point, I like to double check that I am pointed at the right vRA instance. This can be done by listing the current machine prefixes:
 
-```PowerShell
+```
 ./cloudclient.sh vra machineprefix list
 ```
 
 If this is a fresh install, the response should be empty. To create the new machine prefixes in `vRA-B` make sure you are in the script directory (`vRAExports`) then run the following:
 
-```PowerShell
+```
 sh machineprefix-cloudclient-commands.sh
 ```
 
 After a few seconds, the script will complete and you will be able to list the newly created machine prefixes with:
 
-```PowerShell
+```
 ./cloudclient.sh vra machineprefix list
 ```
 

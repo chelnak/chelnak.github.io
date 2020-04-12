@@ -1,5 +1,5 @@
 ---
-title: 'What's in your PowerShell toolkit?'
+title: What's in your PowerShell toolkit?
 date: 2016-11-17T12:00:37+00:00
 author: Craig
 layout: post

@@ -36,7 +36,7 @@ To begin modifying the thumbnailPhoto attribute click on Update > Bulk Modify th
 
 Select replace from the Action section then Edit value as "Path to file".
 
-Enter the UNC path to your photo share followed by ```sAMAccountName.JPG```
+Enter the UNC path to your photo share followed by `sAMAccountName.JPG`
 
 ![UNC](/assets/images/UNC.png)
 

@@ -41,13 +41,13 @@ If you would like to see support for something that isn't listed above let us kn
 
 If you have PowerShell 5 installed, you can grab the module from the [PowerShell Gallery](https://www.powershellgallery.com/) by running the following command:
 
-```PowerShell
+```
 Install-Module -Name PowervRO
 ```
 
 If not, you can grab the latest release straight from the GitHub repository with this one liner:
 
-```PowerShell
+```
 (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/jakkulabs/PowervRO/master/Get-PowervRO.ps1") | iex
 ```
 
@@ -55,7 +55,7 @@ If not, you can grab the latest release straight from the GitHub repository with
 
 You can view help for any cmdlet from the PowerShell console with the Get-Help command:
 
-```PowerShell
+```
 Get-Help -Name Get-vROWorkflow
 ```
 
@@ -69,13 +69,13 @@ If you are using self signed certificates, ensure that you use the `IgnoreCertRe
 
 ## Default Port
 
-```PowerShell
+```
 Connect-vROServer -Server vro.company.local -Credential (Get-Credential) -IgnoreCertRequirements
 ```
 
 ## Custom Port
 
-```PowerShell
+```
 Connect-vROServer -Server vra.company.local -Port 443 -Credential (Get-Credential)
 ```
 
@@ -86,7 +86,7 @@ If successful the cmdlet will return information about your connection.
 You can view this information at anytime by calling the global variable
 `vROConnection`:
 
-```PowerShell
+```
 $GLOBAL:vROConnection
 ```
 
@@ -110,7 +110,7 @@ The first thing to do is get the Id of the category you want to use with `Get-vR
 
 Now we can import the resource element using the Id we got above, with the following command:
 
-```PowerShell
+```
 Import-vROResourceElement -CategoryId ff8080815395ebe7015395ef60490000 -File .\locations.json
 ```
 

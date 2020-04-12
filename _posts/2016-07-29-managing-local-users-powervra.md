@@ -38,20 +38,20 @@ Here are some examples:
 
 ## Modify account attributes
 
-```PowerShell
+```
 Set-vRAUserPrincipal -Id user@vsphere.local -FirstName FirstName-Updated -LastName LastName-Updated -EmailAddress userupdated@vsphere.local -Description Description-Updated
 ```
 
 ## Enable and disable an account
 
-```PowerShell
+```
 Set-vRAUserPrincipal -Id user@vsphere.local -EnableAccount
 Set-vRAUserPrincipal -Id user@vsphere.local -DisableAccount
 ```
 
 ## Reset the password of an account
 
-```PowerShell
+```
 Set-vRAUserPrincipal -Id user@vsphere.local -Password s3cur3p@ss!
 ```
 

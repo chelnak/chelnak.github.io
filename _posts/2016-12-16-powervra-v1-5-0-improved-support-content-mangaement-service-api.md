@@ -31,7 +31,7 @@ The content-management-service set now includes:
 
 `New-vRAPackage` now supports the addition multiple content types to a package. In the following example we use `Get-vRAContent` to return all property groups and composite blueprints. We then create a new package called Package01 that contains our content and export it to the local file system with `Export-vRAPackage`.
 
-```PowerShell
+```
 $ContentIds = Get-vRAContent | ? {($_.ContentTypeId -eq "property-group") -or ($_.ContentTypeId -eq "composite-blueprint")} | Select-Object -ExpandProperty Id
 
 New-vRAPackage -Name Package01 -ContentId $ContentIds

@@ -21,13 +21,13 @@ To reverse an escaped string you can use `[uri]::UnescapeDataString(*string stri
 
 An ![interesting issue](https://github.com/jakkulabs/PowervRA/issues/121) was raised on one of my community projects recently. A contributor pointed out that one of our functions did not work when you chose to filter by name and the string passed to the Name parameter contained an ampersand (&).
 
-```PowerSHell
+```
 Get-vRABusinessGroup -Name "Hello & Hello"
 ```
 
 The REST API query was using a $filter parameter to return results where the name property was equal to the string passed to the Name parameter of the function. For example:
 
-```PowerShell
+```
 $URI = "/identity/api/tenants/$($TenantId)/subtenants?`$filter=name%20eq%20'Hello & Hello'"
 ```
 
