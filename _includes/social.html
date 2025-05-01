@@ -9,10 +9,6 @@
       title="{{ social.linkedin | escape }}"><svg class="svg-icon grey">
         <use xlink:href="{{ '/assets/social-icons.svg#linkedin' | relative_url }}"></use>
       </svg></a></li>{%- endif -%}
-  {%- if social.twitter -%}<li><a href="https://twitter.com/{{ social.twitter | cgi_escape | escape }}"
-      title="{{ social.twitter | escape }}"><svg class="svg-icon grey">
-        <use xlink:href="{{ '/assets/social-icons.svg#twitter' | relative_url }}"></use>
-      </svg></a></li>{%- endif -%}
   {%- if social.rss -%}<li><a href="{{ 'feed.xml' | relative_url }}" title="{{ social.rss | escape }}"><svg
         class="svg-icon grey">
         <use xlink:href="{{ '/assets/social-icons.svg#rss' | relative_url }}"></use>
