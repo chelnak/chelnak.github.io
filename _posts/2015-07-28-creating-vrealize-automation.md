@@ -96,10 +96,10 @@ python createReservation.py
 
 The script will go off and do it's thing. Once it's finished it should return the new reservation id.
 
-![reservationCreated](/assets/images/reservationCreated-img.png)
+![reservationCreated](/assets/images/reservationcreated-img.png)
 
 You can confirm it's existence in the web portal too.
 
 ![reservationCreated](/assets/images/reservationCreated-2-img.png)
 
-The fun doesn't stop here either.. You can integrate [JINJA2]("http://jinja.pocoo.org/docs/dev/) in to your `createReservation.py` script and `reservationTemplate.json` payload to make things a little more dynamic. This will hopefully be my next post.
+The fun doesn't stop here either.. You can integrate [JINJA2](http://jinja.pocoo.org/docs/dev/) in to your `createReservation.py` script and `reservationTemplate.json` payload to make things a little more dynamic. This will hopefully be my next post.

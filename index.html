@@ -23,7 +23,7 @@ layout: default
                         </div>
                         <div class="card-body">
       
-                            <p class="card-text">{{ post.excerpt }}</p>
+                            <div class="card-text">{{ post.excerpt }}</div>
 
                             <a class="text-muted card-text" href="{{ post.url | relative_url }}">
                                 [read more]
@@ -47,11 +47,11 @@ layout: default
     <ul class="pagination">
         {% if paginator.previous_page %}
             <li class="page-item">
-                <a class="page-link" href="{{ paginator.previous_page_path }}" tabindex="-1">Previous</a>
+                <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">Previous</a>
             </li>
         {% else %} 
             <li class="page-item disabled">
-                <a class="page-link" tabindex="-1">Previous</a>
+                <span class="page-link" aria-disabled="true">Previous</span>
             </li>
         {% endif %} 
         
@@ -61,12 +61,12 @@ layout: default
 
         {% if paginator.next_page %}
             <li class="page-item">
-                <a class="page-link" href="{{ paginator.next_page_path }}">Next</a>
+                <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">Next</a>
             </li>
         {% else %}
             <li class="page-item disabled">
-                <a class="page-link" href="{{ paginator.next_page_path }}">Next</a>
+                <span class="page-link" aria-disabled="true">Next</span>
             </li>
         {% endif %}
-    </div>
+    </ul>
 </div>

@@ -11,7 +11,7 @@ tags:
 ---
 While working in a vRA 7.0.1 environment recently I came across an interesting issue where some core services were not behaving the way they should. The **vco** service seemed to be unregistered and **shell-ui-app** along with **advanced-designer-service** were showing as UNAVAILABLE.
 
-![Service-List](/assets/images/2016/07/Service-List-194x300.png)
+![Service-List](/assets/images/Service-List-194x300.png)
 
 <!--more-->
 

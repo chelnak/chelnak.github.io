@@ -15,7 +15,7 @@ tags:
 
 The Orchestration Gateway Service API (or o11n-gateway-service) was introduced in vRA 7.1 and provides a gateway to the vRO instance that is registered with vRA. It enables us to interact with vRO elements such as workflows and actions without the need to make external authenticated API requests.
 
-The [documentation]("http://pubs.vmware.com/vrealize-automation-72/topic/com.vmware.vra.restapi.doc/docs/o11n-gateway-service.html") that exists for this API is fairly comprehensive, however it's not very forthcoming with some of the smaller details you need to get going. It took a fair bit of effort to work out the correct payload format for the requests so I thought it would be a good idea to share what I found.
+The [documentation](http://pubs.vmware.com/vrealize-automation-72/topic/com.vmware.vra.restapi.doc/docs/o11n-gateway-service.html) that exists for this API is fairly comprehensive, however it's not very forthcoming with some of the smaller details you need to get going. It took a fair bit of effort to work out the correct payload format for the requests so I thought it would be a good idea to share what I found.
 
 <!--more-->
 

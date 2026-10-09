@@ -1,10 +1,26 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
+# Bootstrap/Flatly is vendored as compiled CSS for GitHub Pages compatibility.
 ---
 
-@import "variables";
-@import "bootstrap/bootstrap";
 @import "syntax-highlighting";
-@import "bootstrap-4-jekyll/bootstrap-4-jekyll";
-@import "bootstrap_customization";
 @import "custom";
+
+body { font-size: 0.9375rem; }
+.page-content {
+  max-width: 1140px;
+  img { max-width: 100%; height: auto; }
+  a { color: #212529; }
+  pre { overflow-x: auto; padding: 0.75rem; }
+}
+
+/* Preserve the site's dark pagination buttons. */
+.pagination {
+  --bs-pagination-color: #fff;
+  --bs-pagination-bg: #2c3e50;
+  --bs-pagination-border-color: #2c3e50;
+  --bs-pagination-hover-color: #fff;
+  --bs-pagination-hover-bg: #1a252f;
+  --bs-pagination-disabled-color: #ecf0f1;
+  --bs-pagination-disabled-bg: #597ea2;
+}
+.page-content .page-link { color: var(--bs-pagination-color); }

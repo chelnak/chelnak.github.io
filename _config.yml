@@ -57,5 +57,6 @@ exclude:
   - build.sh
   - README.md
   - package-lock.json
-  - LICENCE
-
+  - Dockerfile
+  - compose.yaml
+  - LICENSE
