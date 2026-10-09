@@ -29,7 +29,7 @@ The high level steps are as follows:
 
 Once the script completes both OS and data disks should be enabled for encryption.
 
-![diskencryption](diskencryption.png)
+![diskencryption](/assets/images/diskencryption.png)
 
 ## References
 

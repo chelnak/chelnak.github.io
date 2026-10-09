@@ -26,7 +26,7 @@ In the following post I'm going to cover PowerShell Core support, some interesti
 
 Until 6.0.0-alpha.14 we were blocked on our PowerShell Core development as the method we used to handle untrusted certificates was not supported and Invoke-RestMethod did not have any sort of certificate bypass parameter.
 
-We had previously relied on manually loading a .NET class when the initial connection was made but this method did not work in PowerShell Core. Luckily this was [resolved]("https://github.com/PowerShell/PowerShell/issues/1945) and the SkipCertificateCheck parameter was added to the PowerShell Core versions of Invoke-RestMethod and Invoke-WebRequest which allowed us to proceed with development for v2.0.0.
+We had previously relied on manually loading a .NET class when the initial connection was made but this method did not work in PowerShell Core. Luckily this was [resolved](https://github.com/PowerShell/PowerShell/issues/1945) and the SkipCertificateCheck parameter was added to the PowerShell Core versions of Invoke-RestMethod and Invoke-WebRequest which allowed us to proceed with development for v2.0.0.
 
 If anything, preparing for this release highlighted the importance of test driven development. Having a set of automated tests enabled us to quickly test changes we were making against multiple operating systems. I'm happy to say that 102 out of 103 functions are supported for PowerShell Core.
 
@@ -57,7 +57,7 @@ The second is the introduction of our own docker image. Our current image is bas
 
 Adding support for PowerShell core means we are no longer just testing against Windows. We need to ensure PowervRA behaves as expected on multiple Operating Systems. Being able to rapidly provision containers for each supported OS and automatically invoke our tests is going to be extremely useful.
 
-Then there is the case of unsupported Operating Systems. For example, at the time of writing this there is an [issue with PowerShell Core on CentOS sytems]("https://github.com/PowerShell/PowerShell/issues/2511). While PowervRA may not work naively on this OS, it's possible to install docker and fall back to our default Photon based image.
+Then there is the case of unsupported Operating Systems. For example, at the time of writing this there is an [issue with PowerShell Core on CentOS sytems](https://github.com/PowerShell/PowerShell/issues/2511). While PowervRA may not work naively on this OS, it's possible to install docker and fall back to our default Photon based image.
 
 Our image is also available on docker hub:
 

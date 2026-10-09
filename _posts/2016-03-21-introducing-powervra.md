@@ -21,7 +21,7 @@ For the first release,we have tried to focus on providing access to core functio
 
 ## Getting involved
 
-You can find the project on [GitHub](http://vexpert.me/PowervRA). If you have a cmdlet that you would like to add to a future release, [fork](https://help.github.com/articles/fork-a-repo/) the repo and create a [pull request]("https://help.github.com/articles/creating-a-pull-request/.
+You can find the project on [GitHub](http://vexpert.me/PowervRA). If you have a cmdlet that you would like to add to a future release, [fork](https://help.github.com/articles/fork-a-repo/) the repo and create a [pull request](https://help.github.com/articles/creating-a-pull-request/).
 )
 <iframe src="https://ghbtns.com/github-btn.html?user=jakkulabs&repo=PowervRA&type=fork&count=true" width="170px" height="20px" frameborder="0" scrolling="0"></iframe>
 
