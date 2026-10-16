@@ -2,6 +2,15 @@
  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    function applyColorScheme() {
+      document.documentElement.dataset.bsTheme = colorScheme.matches ? 'dark' : 'light';
+    }
+    applyColorScheme();
+    colorScheme.addEventListener('change', applyColorScheme);
+  </script>
   <link rel="shortcut icon" type="image/png" href="{{ "/favicon.png" | relative_url }}">
   {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/vendor/flatly-5.3.8.min.css" | relative_url }}">

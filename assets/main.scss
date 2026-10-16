@@ -18,7 +18,7 @@ body { font-size: 0.9375rem; }
 .page-content {
   max-width: 1140px;
   img { max-width: 100%; height: auto; }
-  a { color: #212529; }
+  a { color: var(--bs-body-color); }
   pre { overflow-x: auto; padding: 0.75rem; }
   .mermaid-diagram {
     overflow-x: auto;
@@ -39,3 +39,24 @@ body { font-size: 0.9375rem; }
   --bs-pagination-disabled-bg: #597ea2;
 }
 .page-content .page-link { color: var(--bs-pagination-color); }
+
+[data-bs-theme="dark"] {
+  .grey { color: var(--bs-secondary-color); }
+  .card.border-light { border-color: var(--bs-border-color) !important; }
+  .page-content pre {
+    color: #e6edf3;
+    background-color: #161b22;
+    border-radius: 0.375rem;
+  }
+  .highlight {
+    .c, .ch, .cd, .cpf, .cm, .c1, .cs, .cp, .gh, .go, .gp, .gu, .bp { color: #a1aab5; }
+    .k, .kv, .kc, .kd, .kn, .kp, .kr { color: #ff7b72; }
+    .kt, .nc, .nb, .no, .na { color: #79c0ff; }
+    .m, .mb, .mx, .mf, .mh, .il, .mi, .mo { color: #a5d6ff; }
+    .s, .sa, .dl, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss { color: #a5d6ff; }
+    .ge { color: #e6edf3; }
+    .gr, .gt { color: #ff7b72; }
+    .err, .gd { color: #ffdcd7; background-color: #67060c; }
+    .gi { color: #aff5b4; background-color: #033a16; }
+  }
+}
