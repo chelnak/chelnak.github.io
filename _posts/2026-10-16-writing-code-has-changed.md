@@ -49,8 +49,6 @@ I like to imagine problems and possible solutions. I used to only be able to hac
 
 That's the bit I like. There are more ideas I can actually try, even if getting there doesn't feel the same as it used to.
 
-Maybe "boring" was the wrong word for that notebook page. I still want to build things. I'm just figuring out where the satisfaction comes from now.
-
 ## But man, I'm tired
 
 Don't get me wrong... I'm lucky. I get access to the best models when they are released and can run with them, but man, I'm tired. I think the change maybe is the amount of context I need to deal with, especially when working on n tasks in parallel.
@@ -65,5 +63,7 @@ flowchart TD
     D[Agent n] -->|Just a quick question| Me
     Me["My brain"] --> Output["Oh no..."]
 ```
+
+Maybe "boring" was the wrong word for that notebook page. I still want to build things, and I like how much I can try now. I just haven't worked out how much of it I can keep in my head at once.
 
 ... or does that mean that I'm becoming a meat proxy?
