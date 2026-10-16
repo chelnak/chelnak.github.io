@@ -11,8 +11,6 @@ tags:
   - Permissions
 ---
 
-## Introduction
-
 Before looking into Windows file permissions, I thought to myself: how hard can checking a box in a file's properties be?
 
 But what actually happens when a program tries to open that file? Where does Windows look, and how does it decide whether to let us in?

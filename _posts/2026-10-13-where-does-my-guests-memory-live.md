@@ -12,8 +12,6 @@ tags:
   - Windows Hypervisor Platform
 ---
 
-## Introduction
-
 After writing [the last post]({% post_url 2026-10-09-interacting-with-a-virtual-cpu %}), I started to think about memory. Where does it actually live and what does physical mean when thinking about a virtual machine?
 
 <!--more-->

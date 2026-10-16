@@ -12,8 +12,6 @@ tags:
   - Windows Hypervisor Platform
 ---
 
-## Introduction
-
 I get to work on a lot of cool things at Docker. Recently, my focus has been on the new [Docker VMM](https://www.docker.com/blog/docker-vmm-public-beta/), the virtual machine manager that powers Docker Sandboxes and is also available in Docker Desktop (beta).
 
 Agentic workflows have made it much easier to dig deep into machine internals. But I think it’s important to take a step back sometimes and understand what’s actually happening in the dungeons of your code.
