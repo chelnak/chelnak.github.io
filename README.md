@@ -26,12 +26,40 @@ bundle exec jekyll serve
 ## Validation
 
 ```sh
-docker compose run --rm site sh build.sh
+docker compose run --build --rm site sh build.sh
 ```
 
 The build checks generated HTML and internal links. Older posts may contain
 dead external links; those are excluded from this check. Historical HTTP URLs and missing image alt text are allowed; missing local assets still fail. Use
 `bundle exec htmlproofer ./_site` for a full external-link audit.
+
+Validation includes future posts using `--future`; this output is not deployed.
+
+## Scheduled posts
+
+Add the finished post to `_posts` with its publication date in the filename and
+front matter, for example:
+
+```yaml
+date: 2026-10-23T09:00:00+01:00
+```
+
+Use `+01:00` for British Summer Time and `+00:00` for GMT. The site timezone is
+`Europe/London`, and production builds exclude future-dated posts.
+
+The **Publish scheduled posts** workflow requests a GitHub Pages rebuild every
+day at 09:15 UK time, adjusting for daylight saving time. Posts appear on the
+first build after their publication time. GitHub may delay scheduled runs, so
+09:15 is not an exact publication guarantee. Posts dated later in the day will
+normally appear the following morning unless another build runs first.
+
+Pages continues to publish from `main` using the existing branch-based build.
+Pushes still trigger builds, and the workflow can also be run manually from the
+Actions tab. No additional secrets or Pages settings changes are required.
+The workflow must be on `main` for the daily schedule to run.
+
+GitHub disables scheduled workflows in public repositories after 60 days without
+repository activity. If this happens, re-enable the workflow in the Actions tab.
 
 ## Dependencies
 

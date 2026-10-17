@@ -38,6 +38,9 @@ social_links:
   rss: rss
 
 # Build settings
+timezone: Europe/London
+future: false
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap

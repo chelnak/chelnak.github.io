@@ -1,0 +1,25 @@
+name: Publish scheduled posts
+
+on:
+  schedule:
+    - cron: '15 9 * * *'
+      timezone: Europe/London
+  workflow_dispatch:
+
+permissions:
+  pages: write
+
+concurrency:
+  group: scheduled-pages-rebuild
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Request a GitHub Pages build
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh api --method POST "repos/${GH_REPO}/pages/builds"
